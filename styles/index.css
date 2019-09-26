@@ -1,0 +1,32 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: aliceblue;
+    font-size: 3vh;
+}
+
+.banner h2 {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: grey;
+}
+
+@media (min-width: 760px) {
+
+    .banner h2{
+        top: 7%;
+    }
+}
