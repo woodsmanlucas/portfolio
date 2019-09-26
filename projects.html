@@ -6,21 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Projects</title>
     <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="import" href="/navbar.html">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
-        <header>
-                <h1><a href="index.html">Lucas Johnson</a></h1>
-                 <button class="btn-menu">Menu</button>
-                <nav>
-                    <ul>
-                        <li><a href="profile.html">Profile</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                    </ul>
-                </nav>
-                </header>
+<div id="header"></div>
  </div>
  <script src="scripts/menu.js"></script>   
 </body>
+<script>
+        $(function(){
+            $('#header').load('navbar.html');
+        });
+        </script>
 </html>

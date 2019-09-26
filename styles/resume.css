@@ -22,3 +22,8 @@ p {
 main {
     margin: 0 20px;
 }
+
+.wrapper {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
