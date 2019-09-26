@@ -5,10 +5,14 @@ html {
     box-sizing: inherit;
 }
 
+body{
+    background-color: grey;
+}
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: grey;
+    background-color: white;
 }
 
 
