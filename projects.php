@@ -12,7 +12,23 @@
 </head>
 <body>
     <?php
-        require_once("connect.php")
+        require_once("connect.php");
+
+        // echo "host=localhost dbname=" . dbname . " user=" . user . " password=" . password;
+        
+
+        $conn=pg_pconnect("host=localhost dbname=" . dbname . " user=" . user . " password=" . password);
+        echo $conn;
+
+
+        $result = pg_query($conn, "SELECT * FROM project");
+
+        echo $result;
+
+        $row = pg_fetch_array($result);
+
+        echo $row
+
     ?>
 <div class="wrapper">
 <div id="header"></div>
