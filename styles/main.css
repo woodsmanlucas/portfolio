@@ -3,6 +3,29 @@ img {
     height: auto;
 }
 
+.card{
+    width: 550px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards{
+    padding: 20px 0;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+}
+
 .banner {
     position: relative;
     text-align: center;
