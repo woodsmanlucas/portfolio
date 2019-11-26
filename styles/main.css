@@ -5,6 +5,7 @@ img {
 
 .card{
     width: 550px;
+    padding: 20px;
 }
 
 .row {
@@ -15,7 +16,7 @@ img {
 .cards{
     padding: 20px 0;
     max-width: 1200px;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
