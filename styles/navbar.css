@@ -107,7 +107,11 @@ nav a:active {
 
     header nav li {
         flex: 1;
-        max-width: 100px;
+        max-width: 300px;
+   }
+
+   .interview{
+       flex: 2;
    }
 
     header nav a {

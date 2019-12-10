@@ -13,17 +13,24 @@
 </head>
 <body>
     <?php
-        require_once("connect.php");
+        require_once("connect.php");        
 
-        // echo "host=localhost dbname=" . dbname . " user=" . user . " password=" . password;
+        $conn=pg_pconnect("host=localhost dbname=" . "dbname" . " user=" . user . " password=" . password);
         
+        if(!$conn)
+        {
+            die("<p>Database Connection Error checkout my Frontend only version of this project on <a href='https://github.com/woodsmanlucas/portfolio'>GitHub Pages</a></p>");
+        }
 
-        $conn=pg_pconnect("host=localhost dbname=" . dbname . " user=" . user . " password=" . password);
-
-        $result = pg_query($conn, "SELECT * FROM project");
+        $resultProject = pg_query($conn, "SELECT * FROM project");
         
+        $resultTech = pg_query($conn, "SELECT * FROM tech");
 
+        $Tech = [];
 
+        while($row = pg_fetch_array($resultTech)){
+            array_splice($Tech, ($row[0]-1), 0, $row[1]);
+        }
 
     ?>
 <div class="wrapper">
@@ -32,13 +39,26 @@
  <script src="scripts/menu.js"></script>   
  <div class="cards">
 <?php
-        while ($row = pg_fetch_array($result)){
+        while ($row = pg_fetch_array($resultProject)){
         echo "<div class='card'>";
         echo "<img src='$row[4]' alt='$row[1]'>";
         echo "<div class='row'>";
         echo $row[1]; // Name
         echo "<a href='$row[2]'>$row[1] on github</a>"; // github link
+        if ($row[3] != null){
         echo "<a href='$row[3]'>$row[1] as a website</a>"; // on github pages
+        }
+        echo "</div><hr />";
+        echo "<div class=row>";
+        $resultProjectTechnology = pg_query($conn, "SELECT * FROM projecttechnology");
+
+        while ($ptrow = pg_fetch_array($resultProjectTechnology)){
+            if($row[0] == $ptrow[0]){
+                $techId = $ptrow[1]-1;
+                echo "<p>$Tech[$techId]</p>";
+                echo "<p>$ptrow[2] / 5 </p>";
+            }
+        }
         echo "</div></div>";
         }
 ?>

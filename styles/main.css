@@ -48,6 +48,19 @@ img {
     background-color: grey;
 }
 
+.content{
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+input{
+    margin: 20px 0;
+    width: 40%;
+}
+
+
 @media (min-width: 760px) {
 
     .banner h2{
