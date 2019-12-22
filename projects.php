@@ -15,7 +15,7 @@
     <?php
         require_once("connect.php");        
 
-        $conn=pg_pconnect("host=localhost dbname=" . "dbname" . " user=" . user . " password=" . password);
+        $conn=pg_pconnect("host=localhost dbname=" . dbname . " user=" . user . " password=" . password);
         
         if(!$conn)
         {

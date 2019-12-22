@@ -37,11 +37,11 @@
                 $errors = $errors . "<p>Please fill out the form </p>";
                 $displayform = true;
             }else{
-                $name = trim($_GET['Name']);
-                $company = trim($_GET['Company']);
-                $number = trim($_GET['Number']);
-                $time = trim($_GET['Time']);
-                $location = trim($_GET['location']);
+                $name = pg_escape_string(trim($_GET['Name']));
+                $company = pg_escape_string(trim($_GET['Company']));
+                $number = pg_escape_string(trim($_GET['Number']));
+                $time = pg_escape_string(trim($_GET['Time']));
+                $location = pg_escape_string(trim($_GET['location']));
 
                 if($company == ""){
                     $errors = $errors ."<p>Please provide a Company</p>";
@@ -74,6 +74,7 @@
                     echo $Date["minute"]. "</p>";
                     echo "<p>If I have any scheduling conflicts I will try to reschedule within the next business day</p>";
                     echo "<p>If you email me a the job ad (or description) I will bring a resume and cover letter taylored to your job to the interview</p>";
+                    pg_query($conn, "INSERT INTO interviews VALUES ('$company', '$name', '$number', '$time', '$location')");
                 }
             }
 
